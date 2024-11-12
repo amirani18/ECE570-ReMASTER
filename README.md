@@ -1,7 +1,7 @@
 # Readme 
 
 ## Video Demonstration
-[[Video Demo]] (https://drive.google.com/drive/folders/1hnWdFJcDBQ5Fogpza14HEd3GIJqucHD_?usp=sharing)
+[[Video Demo]](https://drive.google.com/drive/folders/1hnWdFJcDBQ5Fogpza14HEd3GIJqucHD_?usp=sharing)
 
 Hello and welcome to a stock price analysis for an artificial intelligence - focused  project.
 ![initimage](images/DALL%C2%B7E%202024-11-12%2012.52.05%20-%20Create%20a%20cute%2C%20'Wall%20Street%20finance%20bro%20core'%20themed%20image%20for%20a%20stock%20price%20forecasting%20project%20using%20artificial%20intelligence.%20Show%20an%20adorable%2C%20roun.webp)
