@@ -1,4 +1,4 @@
-from master import MASTERModel
+from MASTER.master import MASTERModel
 import pickle
 
 universe = 'csi300' # or 'csi800' OR 'csi300'

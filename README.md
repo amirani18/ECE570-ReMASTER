@@ -1,16 +1,55 @@
 # Readme 
-Hello and welcome to a stock price analysis for an artificial intelligence project.
-![initimage](StockMarket.png)
+
+## Video Demonstration
+[[Video Demo]] (https://drive.google.com/drive/folders/1hnWdFJcDBQ5Fogpza14HEd3GIJqucHD_?usp=sharing)
+
+Hello and welcome to a stock price analysis for an artificial intelligence - focused  project.
+![initimage](images/DALL%C2%B7E%202024-11-12%2012.52.05%20-%20Create%20a%20cute%2C%20'Wall%20Street%20finance%20bro%20core'%20themed%20image%20for%20a%20stock%20price%20forecasting%20project%20using%20artificial%20intelligence.%20Show%20an%20adorable%2C%20roun.webp)
 
 This is the official code for the extension of the AAAI-2024 paper: **MASTER: Market-Guided Stock Transformer for Stock Price Forecasting**. [[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/27767)  [[ArXiv preprint]](https://arxiv.org/abs/2312.15235) 
+[[GitHub]] (https://github.com/SJTU-DMTai/MASTER/tree/master)
 
 MASTER is a stock transformer for stock price forecasting, which models the momentary and cross-time stock correlation and guides feature selection with market information.
 
-![MASTER framework](framework.png)
+![MASTER framework](images/framework.png)
 
-Our original experiments were conducted in a complex business codebase developed based on Qlib. The original code is confidential and exhaustive. In order to enable anyone to quickly use MASTER and reproduce the paper's results, here we publish our well-processed data and core code. 
+MASTER's original experiments were conducted in a complex business codebase developed based on Qlib. The original code is confidential and exhaustive. In order to enable anyone to quickly use MASTER and reproduce the paper's results, here the authors publish their well-processed data and core code. 
 
-## Usage
+## Usage for ReMASTER
+1. Run this command to install dependencies.
+- <code>!pip freeze > requirements.txt</code>
+
+2. Download data from one of the following links (the data files are the same) and unpack it into <code> data/ </code> The data used for this experiment is the NASDAQ 100 5-year data including datetime information over a five-year period. 
+- [NASDAQ100 link] (https://www.kaggle.com/datasets/salaheddineelkhirani/5-year-data-for-s-and-p-500-and-nasdaq-100?resource=download&select=NQ_5Years_8_11_2024.csv)
+
+3. Run all code in the ReMASTER_final.ipynb.
+
+4. I provide a trained model: <code> model/NQ100master_0.pkl</code>
+
+## Dataset
+### Form
+The downloaded data is split into training, validation, and test sets, with earlier years as training, a few months for validation, and later years for testing. Note the NASDAQ100 data is a subset of the NASDAQ data.
+You can use the following code to investigate the **datetime, instrument, and feature formulation**. This process is loaded in for you in <code> data_processing/examine_.pkl</code>
+```python
+with open('data/NQ100/NQ100_dl_train.pkl', 'rb') as f:
+    dl_train = pickle.load(f)
+```
+In my code, the data will be gathered chronically and then grouped by prediction dates. the <code> data </code> iterated by the data loader is of shape (N, T, F), where:
+- N - number of stocks. For NQ100, N is around 100 on each prediction date.
+- T - length of lookback_window, T=8.
+- F - 29 in total, including 22 factors, 6 market information, and 1 label.  
+
+### Preprocessing
+The published data went through the following necessary preprocessing. 
+1. Drop NA features, and perform robust daily Z-score normalization on each feature dimension.
+2. Drop NA labels and 5% of the most extreme labels, and perform **daily Z-score normalization** on labels. 
+- Daily Z-score normalization is a common practice in Qlib to standardize the labels for stock price forecasting. To mitigate the difference between a normal distribution and groundtruth distribution, we filtered out 5\% of most extreme labels in training. Note that the reported RankIC compares the output ranking with the groundtruth, whose value is not affected by the label normalization.
+
+### Testing
+The NASDAQ100 dataset is split into training, validation, and test sets based on a time-based split. Earlier dates are used for training and more recent dates are used for testing. They are then converted to .pkl files.
+
+
+## Usage for MASTER
 1. Install dependencies.
 - pandas == 1.5.3
 - torch == 1.11.0
@@ -23,9 +62,6 @@ Our original experiments were conducted in a complex business codebase developed
 - [OneDrive link](https://1drv.ms/f/c/652674690cc447e6/Eu8Kxv4xxTFMtDQqTW0IU0UB8rnpjACA5twMi8BA_PfbSA?e=ooc0za)
 - [MEGA link](https://mega.nz/file/4OE0jK4I#h-LG7OjFnncbL_YGoSx5c0W604OdFMgALTYFcoDvgfw)
 - [Baidu link](https://pan.baidu.com/s/1Wv_nzmw6vlexqZinV_zLtA?pwd=hrrl). 
-
-The data used for this experiment is the NASDAQ 100 5-year data including datetime information over a five-year period. Here is the link to the dataset: 
-- [NASDAQ link] (https://www.kaggle.com/datasets/salaheddineelkhirani/5-year-data-for-s-and-p-500-and-nasdaq-100?resource=download&select=NQ_5Years_8_11_2024.csv)
 
 5. Run main.py.
 
@@ -64,9 +100,6 @@ The published data went through the following necessary preprocessing.
 1. Drop NA features, and perform robust daily Z-score normalization on each feature dimension.
 2. Drop NA labels and 5% of the most extreme labels, and perform **daily Z-score normalization** on labels. 
 - Daily Z-score normalization is a common practice in Qlib to standardize the labels for stock price forecasting. To mitigate the difference between a normal distribution and groundtruth distribution, we filtered out 5\% of most extreme labels in training. Note that the reported RankIC compares the output ranking with the groundtruth, whose value is not affected by the label normalization.
-
-### Testing
-The NASDAQ100 dataset is split into training, validation, and test sets based on a time-based split. Earlier dates are used for training and more recent dates are used for testing. They are then converted to .pkl files.
 
 ## Cite
 If you use the data or the code, please cite our work! :smile:

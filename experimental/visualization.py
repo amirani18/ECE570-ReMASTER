@@ -4,7 +4,7 @@ import matplotlib.dates as mdates
 import pandas as pd
 
 # Load the data to examine its structure
-file_path = '/Users/areejmirani/Desktop/ReMASTER/data/NQ_5Years_8_11_2024.csv'
+file_path = '../data/NQ_5Years_8_11_2024.csv'
 data = pd.read_csv(file_path)
 
 # Display the first few rows and summary information to understand the data structure
