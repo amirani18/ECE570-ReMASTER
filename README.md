@@ -1,13 +1,13 @@
 # Readme 
 
 ## Video Demonstration
-[[Video Demo]] (https://drive.google.com/drive/folders/1hnWdFJcDBQ5Fogpza14HEd3GIJqucHD_?usp=sharing)
+[[Video Demo]](https://drive.google.com/drive/folders/1hnWdFJcDBQ5Fogpza14HEd3GIJqucHD_?usp=sharing)
 
 Hello and welcome to a stock price analysis for an artificial intelligence - focused  project.
 ![initimage](images/DALL%C2%B7E%202024-11-12%2012.52.05%20-%20Create%20a%20cute%2C%20'Wall%20Street%20finance%20bro%20core'%20themed%20image%20for%20a%20stock%20price%20forecasting%20project%20using%20artificial%20intelligence.%20Show%20an%20adorable%2C%20roun.webp)
 
 This is the official code for the extension of the AAAI-2024 paper: **MASTER: Market-Guided Stock Transformer for Stock Price Forecasting**. [[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/27767)  [[ArXiv preprint]](https://arxiv.org/abs/2312.15235) 
-[[GitHub]] (https://github.com/SJTU-DMTai/MASTER/tree/master)
+[[GitHub]](https://github.com/SJTU-DMTai/MASTER/tree/master)
 
 MASTER is a stock transformer for stock price forecasting, which models the momentary and cross-time stock correlation and guides feature selection with market information.
 
@@ -20,7 +20,7 @@ MASTER's original experiments were conducted in a complex business codebase deve
 - <code>!pip freeze > requirements.txt</code>
 
 2. Download data from one of the following links (the data files are the same) and unpack it into <code> data/ </code> The data used for this experiment is the NASDAQ 100 5-year data including datetime information over a five-year period. 
-- [NASDAQ100 link] (https://www.kaggle.com/datasets/salaheddineelkhirani/5-year-data-for-s-and-p-500-and-nasdaq-100?resource=download&select=NQ_5Years_8_11_2024.csv)
+- [NASDAQ100 link](https://www.kaggle.com/datasets/salaheddineelkhirani/5-year-data-for-s-and-p-500-and-nasdaq-100?resource=download&select=NQ_5Years_8_11_2024.csv)
 
 3. Run all code in the ReMASTER_final.ipynb.
 
