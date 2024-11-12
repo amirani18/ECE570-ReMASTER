@@ -1,10 +1,8 @@
 # ReadMe 
 
-## Video Demonstration
-[[Video Demo]](https://drive.google.com/drive/folders/1hnWdFJcDBQ5Fogpza14HEd3GIJqucHD_?usp=sharing)
-
 Hello and welcome to a stock price analysis for an artificial intelligence - focused  project.
-![initimage](images/DALL%C2%B7E%202024-11-12%2012.52.05%20-%20Create%20a%20cute%2C%20'Wall%20Street%20finance%20bro%20core'%20themed%20image%20for%20a%20stock%20price%20forecasting%20project%20using%20artificial%20intelligence.%20Show%20an%20adorable%2C%20roun.webp)
+
+[[Video Demo]](https://drive.google.com/drive/folders/1hnWdFJcDBQ5Fogpza14HEd3GIJqucHD_?usp=sharing)
 
 This is the official code for the extension of the AAAI-2024 paper: **MASTER: Market-Guided Stock Transformer for Stock Price Forecasting**. [[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/27767)  [[ArXiv preprint]](https://arxiv.org/abs/2312.15235) 
 [[GitHub]](https://github.com/SJTU-DMTai/MASTER/tree/master)
