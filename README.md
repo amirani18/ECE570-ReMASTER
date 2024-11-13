@@ -2,7 +2,7 @@
 
 Hello and welcome to a stock price analysis for an artificial intelligence - focused  project.
 
-[[Video Demo]](https://drive.google.com/drive/folders/1hnWdFJcDBQ5Fogpza14HEd3GIJqucHD_?usp=sharing)
+[[Video Demo]](ECE570-ReMASTER.mp4)
 
 This is the official code for the extension of the AAAI-2024 paper: **MASTER: Market-Guided Stock Transformer for Stock Price Forecasting**. [[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/27767)  [[ArXiv preprint]](https://arxiv.org/abs/2312.15235) 
 [[GitHub]](https://github.com/SJTU-DMTai/MASTER/tree/master)
